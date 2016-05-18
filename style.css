@@ -1,0 +1,21 @@
+body {
+
+    background: #fff;
+}
+
+.display-quote {
+    width: 50%;
+    margin: 20px auto;
+    border: 1px solid gray;
+    text-align: center;
+    padding: 30px 0;
+    background: #00ffbf;
+    border-radius: 20px;
+
+}
+
+p {
+
+    font-size: 18px;
+}
+
