@@ -20,6 +20,7 @@ $.ajax({
 
 function getWeather(){
 //get data from Open Weather API
+
 var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=30645bead81bd8838e95049b6fc75374';
 
 $.ajax({
