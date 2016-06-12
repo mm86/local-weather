@@ -1,0 +1,19 @@
+body {
+
+	text-align: center;
+}
+
+
+.degree, .celsius {
+
+	display: inline-block;
+
+
+}
+
+.degree {
+
+	padding-bottom: 5px;
+}
+
+
