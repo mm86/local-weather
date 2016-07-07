@@ -5,7 +5,6 @@ $.ajax({
         type: 'GET',
     })
     .done(function(json) {
-        console.log("My country is: " + json.region);
         city = json.city + " , " + json.region;
         getWeather();
     })
@@ -22,7 +21,6 @@ function getWeather() {
         dataType: 'jsonp',
 
     }).done(function(results) {
-        console.log("inside open weather");
         var img = "http://openweathermap.org/img/w/" + results.weather[0].icon + ".png";
         $('.city').html(city);
         $('.weather').prepend('<img src=' + img + '>');
