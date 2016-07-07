@@ -4,12 +4,12 @@ $.ajax({
         url: "http://ip-api.com/json",
         type: 'GET',
     })
-    .done(function(json) {
-        city = json.city + " , " + json.region;
+    .done(function(response) {
+        city = response.city + " , " + response.region;
         getWeather();
     })
-    .fail(function(err) {
-        alert("Request failed, error= " + err);
+    .fail(function(jqXHR, textStatus, errorThrown) {
+        alert("Request failed, error= " + errorThrown);
     })
 
 function getWeather() {
@@ -20,16 +20,16 @@ function getWeather() {
         url: url,
         dataType: 'jsonp',
 
-    }).done(function(results) {
-        var img = "http://openweathermap.org/img/w/" + results.weather[0].icon + ".png";
+    }).done(function(response) {
+        var img = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
         $('.city').html(city);
         $('.weather').prepend('<img src=' + img + '>');
-        $('.degree').html(results.main.temp);
+        $('.degree').html(response.main.temp);
 
     })
 
-    .fail(function() {
-        console.log("Data could not be retrieved from Weather API");
+    .fail(function(jqXHR, textStatus, errorThrown) {
+        alert("Request failed, error= " + errorThrown);
     });
 
 }
