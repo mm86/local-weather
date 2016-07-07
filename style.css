@@ -16,4 +16,8 @@ body {
 	padding-bottom: 5px;
 }
 
+.metric {
 
+	font-weight: bold;
+	font-size: 18px;
+}
