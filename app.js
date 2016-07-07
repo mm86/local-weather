@@ -2,7 +2,7 @@ var city;
 //get city name of the user
 $.ajax({
         url: "http://ip-api.com/json",
-        type: 'GET',
+        
     })
     .done(function(response) {
         city = response.city + " , " + response.region;
@@ -21,9 +21,11 @@ function getWeather() {
         dataType: 'jsonp',
 
     }).done(function(response) {
+       
         var img = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
         $('.city').text(city);
         $('.degree').text(response.main.temp);
+        $('.desc').text(response.weather[0].description);
         $('.weather').prepend('<img src=' + img + '>');
         
 
