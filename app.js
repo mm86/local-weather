@@ -1,3 +1,4 @@
+$(function(){
 var city;
 //get city name of the user
 $.ajax({
@@ -36,3 +37,4 @@ function getWeather() {
     });
 
 }
+});
