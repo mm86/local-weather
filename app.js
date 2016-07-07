@@ -22,9 +22,10 @@ function getWeather() {
 
     }).done(function(response) {
         var img = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
-        $('.city').html(city);
+        $('.city').text(city);
+        $('.degree').text(response.main.temp);
         $('.weather').prepend('<img src=' + img + '>');
-        $('.degree').html(response.main.temp);
+        
 
     })
 
